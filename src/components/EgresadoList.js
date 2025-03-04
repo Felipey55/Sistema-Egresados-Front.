@@ -4,7 +4,7 @@ const ListaEgresados = () => {
     const [egresados, setEgresados] = useState([]);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/egresados") // Ajusta la URL si es necesario
+        fetch("http://127.0.0.1:8000/api/egresados") // Ajusta la URL si es necesario
             .then(response => response.json())
             .then(data => {
                 console.log("Datos recibidos:", data);
