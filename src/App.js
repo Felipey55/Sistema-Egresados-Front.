@@ -1,18 +1,17 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import EgresadoList from "./components/EgresadoList";
-import MyNavbar from "./components/Navbar";
 
 const App = () => {
   return (
     <Router>
-      <MyNavbar />
       <Routes>
+        {/* Redirigir la raíz ("/") a "/egresados" */}
+        <Route path="/" element={<Navigate to="/egresados" />} />
         <Route path="/egresados" element={<EgresadoList />} />
       </Routes>
     </Router>
   );
 };
-
 
 export default App;
